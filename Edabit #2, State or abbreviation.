@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+class filter{
+    public ArrayList<String> filterStateNames(ArrayList<String> place, String look){
+        ArrayList<String> abbreviations = new ArrayList<>();
+        ArrayList<String> states = new ArrayList<>();
+        for (String pl : place){
+            if (pl.toUpperCase().equals(pl)){
+                abbreviations.add(pl);
+            } else {
+                states.add(pl);
+            }
+        }
+        if (look == "abb"){
+            return abbreviations;
+        } else {
+            return states;
+        }
+    }
+    public static void main(String[] args){
+        filter temp = new filter();
+        ArrayList<String> places = new ArrayList<>(Arrays.asList("Arizona", "CA", "NY", "Nevada"));
+        System.out.println(temp.filterStateNames(places, "full"));
+    }
+}
