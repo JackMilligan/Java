@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+class Scratch{
+    public String rev(Integer input){
+        String lis = input.toString();
+        ArrayList<Character> hold = new ArrayList<>();
+        while (lis.length() != 0){
+            hold.add(lis.charAt(lis.length()-1));
+            lis = lis.substring(0, lis.length()-1);
+        }
+        String hold2 = "";
+        for (Character item : hold){
+            hold2 = hold2.concat(String.valueOf(item));
+        }
+        return hold2;
+    }
+    public static void main(String[] args){
+        Scratch hello = new Scratch();
+        System.out.println(hello.rev(18495837));
+
+    }
+}
